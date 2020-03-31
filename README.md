@@ -45,18 +45,18 @@ When an app is installed (or updated), the operating system reads the app's UTI 
 
 Obviously, one kind of filename extensions can only be associated with one UTI across the system. So, when the "MalicousApp" is installed, all `.innocent` files across the system will hence be regarded as documents of type `me.frankshaka.file.malicious`.
 
-What's actually wrong is that `UIDocumentBrowserViewController` *thinks* that the "InnocentApp" is not permitted to open `.innocent` files just because the app is not associated with the malicious UTI. This does NOT make sense. The document browser is just a normal component of the app from the user's point of view, rather than a system widget like the Share Sheet or a Document Picker, and thus it should behave the same way and obey the same rules as other components inside this app, no matter how it works.
+What's actually wrong is that `UIDocumentBrowserViewController` *thinks* that the "InnocentApp" is not permitted to open `.innocent` files just because the app is not associated with the malicious UTI. This does NOT make sense. The document browser is just a normal component of the app from the user's point of view, rather than a system widget like a Share Sheet or a Document Picker, and thus it should behave the same way and obey the same rules as other components of the same app, no matter how it works.
 
-This issue is *disgusting* because, as the developer of the "InnocentApp", you've done nothing wrong. You precisely follow the Apple's documentation and tutorials, and even created the app from the Xcode template "Document-based App". And one day, you suddenly receive thousands of emails from angry users, or even thousands of 1-star comments to your app in the App Store, reporting that your app does not work any more, just because they installed another app developed by a third-party developer!
+This issue is *disgusting* because, as the developer of the "InnocentApp", you've done nothing wrong. You precisely followed the Apple's documentation and tutorials, and even created the app from the Xcode template "Document-based App". But one day, you suddenly receive thousands of emails from angry users, or even thousands of 1-star comments to your app in the App Store, reporting that your app does not work any more, just because they installed another app developed by a third-party developer!
 
 Sure you can ask your users to delete that third-party app. But in a real world, *big companies can make small mistakes*. That third-party app could happen to be Twitter, Facebook, Youtube, Instagram, Dropbox, Spotify, or even a popular game. It doesn't have to be a "Document-based App", all it needs is to *carelessly* include several lines of code in their `Info.plist` file and submit the update to the App Store, and ... "Boooom!" You're done.
 
 
 # What You Can Do
 
-If you've also encountered this issue, there's rarely anything you can do to quickly recover from the consequence. Here're my suggestions.
+If you've also encountered this issue, there's rarely anything you can do to quickly recover from the consequence. Here's my advice.
 
-1.  Ask the third-party developer to update their app by either removing that UTI declaration or using the same declaration as yours. (If you can't contact them directly, you can try [asking Apple to mediate between you and the third-party developer](https://www.apple.com/legal/internet-services/itunes/appstorenotices/).) And WAIT for the updated version of that app to be submitted, promoted, and finally downloaded and installed by all of your users affected.
+1.  Ask the third-party developer to update their app by either removing that UTI declaration or using the same declaration as yours. If you can't contact them directly, you can try [asking Apple to mediate between you and the third-party developer](https://www.apple.com/legal/internet-services/itunes/appstorenotices/). And, WAIT for the updated version of that app to be submitted, promoted, and finally downloaded and installed by all of the users affected.
 2.  [Submit a bug report to Apple](https://feedbackassistant.apple.com/) and, again, WAIT for Apple to fix this bug.
 
 If you're just interested in this issue, it's welcome for you to
