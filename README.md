@@ -24,7 +24,7 @@ This issue affects ALL iOS apps that adpot `UIDocumentBrowserViewController` sin
     ![Screenshot of the MaliciousApp Xcode project](Screenshots/screenshot-maliciousapp-project.png)
 
 6.  When the "MaliciousApp" is installed and launched, you don't even need to perform any interaction with this app, just simply return to the Home Screen and re-open the "InnocentApp" (or you can do so using the App Switcher).
-7.  Here the *"MAGIC"* happens: **All `.innocent` documents created by the "InnocentApp" can NOT be opened any more inside the very same app!** You can NOT even rename or delete them! And the most weird thing is that *you CAN still create new `.innocent` documents, but you can NO LONGER re-open them*! Now the app becomes *totally useless* since `UIDocumentBrowserViewController` can't open any documents.
+7.  Here the *"MAGIC"* happens: **All `.innocent` documents in the document browser can NO LONGER be opened** inside the "InnocentApp"! You can NOT even rename or delete them! And the most weird thing is that *you CAN still create new `.innocent` documents, but you can NO LONGER re-open them*! Now the app becomes *totally useless* since no documents created by the app can be opened from within the app.
 
     ![Screenshot of the InnocentApp's document browser with unavailable documents](Screenshots/screenshot-innocentapp-documents-unavailable.png)
 
