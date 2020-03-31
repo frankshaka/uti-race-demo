@@ -2,7 +2,7 @@
 
 This repository demonstrates how the [UIDocumentBrowserViewController](https://developer.apple.com/documentation/uikit/uidocumentbrowserviewcontroller) component is *broken* by a [race condition](https://en.wikipedia.org/wiki/Race_condition) issue caused by multiple iOS apps trying to register different [Uniform Type Identifiers](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_conc/understand_utis_conc.html) (aka. *UTI*) against the same [filename extension](https://en.wikipedia.org/wiki/Filename_extension).
 
-This issue affects ALL iOS apps that adpot `UIDocumentBrowserViewController` since iOS 11 and, when it happens, the **whole app is malfunctioning** since the document browser, i.e. the root view controller of the app, is broken. It must be fixed, and can only be fixed, by Apple.
+This issue affects ALL iOS apps that adpot `UIDocumentBrowserViewController` since iOS 11 and, when it happens, the whole app is malfunctioning because it can NOT open its own documents. It must be fixed, and can only be fixed, by Apple.
 
 # Steps to Reproduce
 
